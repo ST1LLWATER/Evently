@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import SideNav from '../../../components/SideNav';
 import SuggestionsPanel from '../../../components/SuggestionsPanel';
 import NoticeBoard from '../../../components/NoticeBoard';
+import Loader from '../../../components/Loader';
 
 const options = {
   weekday: 'long',
@@ -71,7 +72,9 @@ const EventPage = () => {
       </div>
     </div>
   ) : (
-    'Loading..'
+    <div className="absolute h-screen w-screen bg-white flex justify-center items-center">
+      <Loader />
+    </div>
   );
 };
 
