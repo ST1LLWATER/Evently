@@ -167,7 +167,7 @@ const EventForm = ({ setModalOpen, event_id }) => {
           }}
           id="meetUrl"
           label="Meet Url"
-          placeholder="Meeting Url"
+          placeholder="Optional"
           value={formData.url}
           onChange={(event) =>
             setFormData({ ...formData, url: event.target.value })

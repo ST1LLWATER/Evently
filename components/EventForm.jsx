@@ -205,7 +205,7 @@ const EventForm = ({ setModalOpen }) => {
             defaultValueRemove: { color: 'black' },
             input: { backgroundColor: 'white', border: '1px solid gray' },
           }}
-          placeholder="Roll Number(s)"
+          placeholder="Optional"
           label="Select Manager(s)"
           data={rno}
           onChange={(val) => setManagers(val)}
@@ -243,8 +243,8 @@ const EventForm = ({ setModalOpen }) => {
             },
           }}
           id="meetUrl"
-          label="Meet Url (If Any)"
-          placeholder="Meeting Url"
+          label="Meet Url"
+          placeholder="Optional"
           value={meetUrl}
           onChange={(event) => setMeetUrl(event.target.value)}
         />
