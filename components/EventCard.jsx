@@ -57,6 +57,7 @@ const EventCard = () => {
   });
 
   useEffect(() => {
+    console.log('NEW FETCH STATUS');
     console.log(status);
   }, [status]);
 
@@ -80,7 +81,7 @@ const EventCard = () => {
 
   return (
     <Plock nColumns={breakpoints} gap={0} debounce={100}>
-      {data.map((event, index) => {
+      {data.events.map((event, index) => {
         let creatorRollNo = event.creator.split(':')[1];
         let parsedDate = '' + new Date(event.scheduled_date);
         let [day, month, date, ...rest] = parsedDate.split(' ');

@@ -44,10 +44,8 @@ const SideNav = ({ eventData }) => {
         lg:flex flex-col
         w-64
         h-full
-        {/*h-[calc(100vh-69px)]*/}
         py-4
         pb-0
-        flex flex-col
         overflow-hidden
        "
       >

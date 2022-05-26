@@ -16,3 +16,9 @@ export const getMyEvents = async (params) => {
   const json = await response.json();
   return json;
 };
+
+export const getNotices = async (params) => {
+  const response = await fetch(`/api/event/get/notices/${params.event_id}`);
+  const json = await response.json();
+  return json;
+};

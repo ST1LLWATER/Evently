@@ -20,8 +20,8 @@ export default function Nav() {
   const navigation = [
     { name: 'Home', href: '/', current: true },
     { name: 'Events', href: '/events', current: false },
-    { name: 'Contact Developers', href: '#', current: false },
-    { name: 'Directory', href: '#', current: false },
+    { name: 'Archives', href: '#', current: false },
+    { name: 'Developer', href: '#', current: false },
   ];
 
   const userNavigation = [
@@ -30,7 +30,7 @@ export default function Nav() {
       onClick: () => console.log('clicked'),
       current: true,
     },
-    { name: 'Settings', onClick: () => console.log('clicked'), current: false },
+    // { name: 'Settings', onClick: () => console.log('clicked'), current: false },
     {
       name: 'Sign out',
       onClick: async () => {
@@ -178,7 +178,7 @@ export default function Nav() {
                     className={classNames(
                       item.current
                         ? 'bg-gray-100 text-gray-900'
-                        : 'hover:bg-gray-50',
+                        : 'hover:bg-gray-50 hover:text-gray-900',
                       'block rounded-md py-2 px-3 text-base font-medium'
                     )}
                   >

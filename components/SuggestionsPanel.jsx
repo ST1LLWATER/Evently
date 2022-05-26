@@ -30,7 +30,7 @@ function SuggestionsPanel({ id }) {
   });
 
   return (
-    <div className="flex flex-col gap-x-4 flex-1 h-3/5 mt-4 lg:w-2/3 w-full p-4 shadow-sm bg-gray-50 rounded-lg justify-end">
+    <div className="flex flex-col gap-x-4 flex-1 h-52 md:h-3/5 mt-4 lg:w-full w-full p-4 shadow-sm bg-gray-50 rounded-lg justify-end">
       <div className="overflow-y-auto flex flex-col-reverse">
         {data &&
           data.Suggestions.slice(0)
@@ -69,7 +69,7 @@ function SuggestionsPanel({ id }) {
           </div>
           <button
             type="submit"
-            className="text-white bg-rose-700 border-0 px-2 py-2 md:px-8 focus:outline-none hover:bg-rose-600 rounded text-md md:text-lg"
+            className="text-white bg-rose-700 border-0 px-2 py-2 md:px-8 focus:outline-none hover:bg-rose-600 rounded text-base md:text-lg"
           >
             Suggest
           </button>

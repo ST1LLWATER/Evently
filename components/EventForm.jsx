@@ -4,9 +4,9 @@ import { DatePicker } from '@mantine/dates';
 import { useNotifications } from '@mantine/notifications';
 import { CalendarIcon, CheckIcon, Cross1Icon } from '@modulz/radix-icons';
 import { useEffect } from 'react';
-import { useQueryClient } from 'react-query';
+import { useQueryClient, useMutation } from 'react-query';
 
-const EventForm = ({ rollNumbers, setModalOpen }) => {
+const EventForm = ({ setModalOpen }) => {
   const [eventName, setEventName] = useState('');
   const [eventDescription, setEventDescription] = useState('');
   const [rno, setRno] = useState([]);
@@ -17,7 +17,7 @@ const EventForm = ({ rollNumbers, setModalOpen }) => {
   const [isRollNumber, setIsRollNumber] = useState(true);
 
   const notifications = useNotifications();
-  const queryClient = useQueryClient();
+  const queryClient = new useQueryClient();
 
   useEffect(() => {
     if (year[0]) {
@@ -39,9 +39,7 @@ const EventForm = ({ rollNumbers, setModalOpen }) => {
     }
   }, [year]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const handleSubmit = () => {
     if (
       eventName === '' ||
       eventDescription === '' ||
@@ -100,7 +98,6 @@ const EventForm = ({ rollNumbers, setModalOpen }) => {
         }
       })
       .then((data) => {
-        console.log(data);
         notifications.updateNotification(id, {
           color: 'teal',
           title: 'Event Created!',
@@ -124,9 +121,19 @@ const EventForm = ({ rollNumbers, setModalOpen }) => {
       });
   };
 
+  const mutation = useMutation(handleSubmit, {
+    onSuccess: () => {
+      console.log('success');
+      queryClient.invalidateQueries('my_events');
+    },
+  });
+
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={(e) => {
+        e.preventDefault();
+        mutation.mutate();
+      }}
       className="grid place-items-center  text-black"
     >
       <div className="w-full flex flex-col gap-y-4">
