@@ -1,0 +1,6 @@
+"rewrites": [
+    {
+        "source": "/",
+        "destination": "https://stillwater-evently-backend.herokuapp.com/",
+    }
+]
