@@ -1,6 +1,8 @@
-"rewrites": [
+{
+  "rewrites": [
     {
-        "source": "/",
-        "destination": "https://stillwater-evently-backend.herokuapp.com/",
+      "source": "/",
+      "destination": "https://stillwater-evently-backend.herokuapp.com/"
     }
-]
+  ]
+}
