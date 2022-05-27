@@ -23,7 +23,7 @@ const NoticeBoard = ({ admins, event_id }) => {
 
   if (status === 'loading')
     return (
-      <div className="absolute h-screen w-screen bg-white flex justify-center items-center">
+      <div className="h-full w-full bg-white flex justify-center items-center">
         <Loader />
       </div>
     );
