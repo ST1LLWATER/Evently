@@ -5,6 +5,7 @@ import SideNav from '../../../components/SideNav';
 import SuggestionsPanel from '../../../components/SuggestionsPanel';
 import NoticeBoard from '../../../components/NoticeBoard';
 import Loader from '../../../components/Loader';
+import { Button } from '@mantine/core';
 
 const options = {
   weekday: 'long',
@@ -47,9 +48,16 @@ const EventPage = () => {
       </div>
       <div className="flex flex-1 flex-col overflow-y-auto gap-4 md:flex-row p-6 lg:py-5 lg:px-8 max-h-full">
         <div className="text-xl min-h-[600px] md:h-full md:w-3/5 overflow-y-auto flex flex-col">
-          <h1 className="text-5xl font-Roboto font-extrabold inline pr-6 border-b-4 border-gray-200">
-            {data.event_name}
-          </h1>
+          <div className="flex items-center">
+            <h1 className="text-5xl font-Roboto font-extrabold inline pr-6 border-b-4 border-gray-200">
+              {data.event_name}
+            </h1>
+            <div
+              onClick={() => router.push(`/events/${router.query.id}/reports`)}
+            >
+              <Button className="bg-rose-600 hover:bg-rose-700">REPORTS</Button>
+            </div>
+          </div>
           <h2 className="mb-4 font-Roboto font-normal text-2xl">
             {data.description}
           </h2>

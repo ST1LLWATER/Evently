@@ -5,6 +5,7 @@ import { useNotifications } from '@mantine/notifications';
 import { CalendarIcon, CheckIcon, Cross1Icon } from '@modulz/radix-icons';
 import { useEffect } from 'react';
 import { useQueryClient, useMutation } from 'react-query';
+import dayjs from 'dayjs';
 
 const EventForm = ({ setModalOpen }) => {
   const [eventName, setEventName] = useState('');
@@ -224,6 +225,8 @@ const EventForm = ({ setModalOpen }) => {
             },
           }}
           label="Event date"
+          minDate={dayjs(new Date()).toDate()}
+          maxDate={dayjs(new Date()).add(3, 'month').toDate()}
           value={scheduleDate}
           onChange={(event) => {
             setScheduleDate(event);

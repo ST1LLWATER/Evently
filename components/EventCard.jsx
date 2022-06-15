@@ -79,6 +79,17 @@ const EventCard = () => {
       </div>
     );
 
+  if (data.events.length === 0) {
+    return (
+      <div className="text-8xl tracking-wide font-Rubik h-full w-full grid place-items-center">
+        <div>
+          <h1>No Events</h1>
+          <h2>Come Tomorrow</h2>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <Plock nColumns={breakpoints} gap={0} debounce={100}>
       {data.events.map((event, index) => {
